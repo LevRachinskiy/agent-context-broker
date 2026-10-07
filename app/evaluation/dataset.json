@@ -1,0 +1,39 @@
+[
+  {"name":"stale-cache","query":"redis cache stale revision invalidation","budget":180,
+   "relevant_groups":["revision","cache-key"],
+   "required_facts":["increment session revision","include revision in the cache key"],
+   "items":[
+     {"group":"revision","content":"For redis cache invalidation, increment session revision on every write.","kind":"memory"},
+     {"group":"revision","content":"For Redis cache invalidation, increment session revision on every write!","kind":"user"},
+     {"group":"cache-key","content":"Prevent stale redis context: include revision in the cache key.","kind":"memory"},
+     {"group":"noise","content":"Buy tomatoes and basil for dinner.","kind":"user"},
+     {"group":"noise","content":"The office picnic is next Tuesday.","kind":"assistant"}
+   ]},
+  {"name":"payment-retry","query":"payment retry idempotency duplicate charge","budget":180,
+   "relevant_groups":["idempotency","ambiguous"],
+   "required_facts":["unique idempotency key","query payment status"],
+   "items":[
+     {"group":"idempotency","content":"Payment retry: a unique idempotency key prevents duplicate charge requests.","kind":"memory"},
+     {"group":"idempotency","content":"Payment retry: a unique idempotency key prevents duplicate charge requests!","kind":"user"},
+     {"group":"ambiguous","content":"After a payment timeout, query payment status before a retry to avoid duplicate charge.","kind":"tool_response"},
+     {"group":"noise","content":"Lunch menu includes salad.","kind":"user"}
+   ]},
+  {"name":"tool-timeout","query":"tool timeout retry side effect readonly","budget":180,
+   "relevant_groups":["readonly","timeout"],
+   "required_facts":["read only","do not retry a timeout"],
+   "items":[
+     {"group":"readonly","content":"Retry transient tool failures only when the tool is read only.","kind":"memory"},
+     {"group":"readonly","content":"Retry transient tool failures only when the tool is read only!","kind":"assistant"},
+     {"group":"timeout","content":"Do not retry a timeout blindly: an external side effect may already have happened.","kind":"memory"},
+     {"group":"noise","content":"Soccer practice starts at six.","kind":"user"}
+   ]},
+  {"name":"durable-events","query":"postgres durable session events transaction redis cache","budget":180,
+   "relevant_groups":["transaction","fallback"],
+   "required_facts":["same postgres transaction","fall back to durable reads"],
+   "items":[
+     {"group":"transaction","content":"Persist durable session events and revision updates in the same Postgres transaction.","kind":"memory"},
+     {"group":"transaction","content":"Persist durable session events and revision updates in the same Postgres transaction!","kind":"user"},
+     {"group":"fallback","content":"If Redis cache fails, fall back to durable reads for session events.","kind":"memory"},
+     {"group":"noise","content":"Travel packing list: socks and sunglasses.","kind":"user"}
+   ]}
+]

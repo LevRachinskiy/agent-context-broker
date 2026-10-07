@@ -1,0 +1,111 @@
+{
+  "session_id": "94b505af-f355-4c01-80b8-069a3a845918",
+  "tool_trace": {
+    "trace_id": "cf6fc5ca-12f1-4f24-a9df-960943a03f89",
+    "tool": "memory_lookup",
+    "success": true,
+    "result": {
+      "found": true,
+      "content": "Redis context cache keys must include the session revision to prevent stale context."
+    },
+    "error": null,
+    "attempts": 1,
+    "latency_ms": 4.475474000059876
+  },
+  "cache_hit_on_repeat": true,
+  "context": {
+    "session_id": "94b505af-f355-4c01-80b8-069a3a845918",
+    "revision": 35,
+    "query": "Why does Redis context cache return stale context after session writes?",
+    "items": [
+      {
+        "event_id": "1a23bb82-757e-4a98-8385-b18bf653d298",
+        "content": "Redis context cache keys must include the session revision to prevent stale context.",
+        "source": "memory",
+        "semantic_score": 0.572892,
+        "recency_score": 1.0,
+        "importance_score": 0.8,
+        "source_score": 1.0,
+        "final_score": 0.69238,
+        "estimated_tokens": 33,
+        "compressed": false,
+        "reason": "0.65 relevance + 0.15 recency + 0.15 importance + 0.05 source; budget fit"
+      },
+      {
+        "event_id": "23b102f8-b4f3-4776-81e0-0c045a916525",
+        "content": "Earlier debugging attempt: clearing Redis temporarily fixed stale context, but the bug returned after writes.",
+        "source": "memory",
+        "semantic_score": 0.509028,
+        "recency_score": 1.0,
+        "importance_score": 0.8,
+        "source_score": 1.0,
+        "final_score": 0.650868,
+        "estimated_tokens": 39,
+        "compressed": false,
+        "reason": "0.65 relevance + 0.15 recency + 0.15 importance + 0.05 source; budget fit"
+      },
+      {
+        "event_id": "1aedb10c-04ef-4a2a-a632-0797a60a15f1",
+        "content": "{\"trace_id\":\"cf6fc5ca-12f1-4f24-a9df-960943a03f89\",\"tool\":\"memory_lookup\",\"success\":true,\"result\":{\"found\":true,\"content\":\"Redis context cache keys must include the session revision to prevent stale context.\"},\"error\":null,\"attempts\":1,\"latency_ms\":4.475474000059876}",
+        "source": "tool_response",
+        "semantic_score": 0.350823,
+        "recency_score": 1.0,
+        "importance_score": 0.7,
+        "source_score": 0.9,
+        "final_score": 0.528035,
+        "estimated_tokens": 81,
+        "compressed": false,
+        "reason": "0.65 relevance + 0.15 recency + 0.15 importance + 0.05 source; budget fit"
+      },
+      {
+        "event_id": "0cf37813-8af7-4937-bc67-80de47b6da8f",
+        "content": "Postgres persists events and increments session revision in one transaction.",
+        "source": "memory",
+        "semantic_score": 0.087706,
+        "recency_score": 1.0,
+        "importance_score": 0.8,
+        "source_score": 1.0,
+        "final_score": 0.377009,
+        "estimated_tokens": 31,
+        "compressed": false,
+        "reason": "0.65 relevance + 0.15 recency + 0.15 importance + 0.05 source; budget fit"
+      },
+      {
+        "event_id": "fed176ef-27b4-4239-b64b-6fb65c9db361",
+        "content": "{\"tool\": \"memory_lookup\", \"arguments\": {\"key\": \"cache\"}}",
+        "source": "tool_call",
+        "semantic_score": 0.124035,
+        "recency_score": 1.0,
+        "importance_score": 0.5,
+        "source_score": 0.4,
+        "final_score": 0.325623,
+        "estimated_tokens": 27,
+        "compressed": false,
+        "reason": "0.65 relevance + 0.15 recency + 0.15 importance + 0.05 source; budget fit"
+      }
+    ],
+    "text": "[memory:1a23bb82-757e-4a98-8385-b18bf653d298]\nRedis context cache keys must include the session revision to prevent stale context.\n[memory:23b102f8-b4f3-4776-81e0-0c045a916525]\nEarlier debugging attempt: clearing Redis temporarily fixed stale context, but the bug returned after writes.\n[tool_response:1aedb10c-04ef-4a2a-a632-0797a60a15f1]\n{\"trace_id\":\"cf6fc5ca-12f1-4f24-a9df-960943a03f89\",\"tool\":\"memory_lookup\",\"success\":true,\"result\":{\"found\":true,\"content\":\"Redis context cache keys must include the session revision to prevent stale context.\"},\"error\":null,\"attempts\":1,\"latency_ms\":4.475474000059876}\n[memory:0cf37813-8af7-4937-bc67-80de47b6da8f]\nPostgres persists events and increments session revision in one transaction.\n[tool_call:fed176ef-27b4-4239-b64b-6fb65c9db361]\n{\"tool\": \"memory_lookup\", \"arguments\": {\"key\": \"cache\"}}\n",
+    "considered": 35,
+    "selected": 5,
+    "duplicates_removed": 20,
+    "irrelevant_removed": 10,
+    "budget_dropped": 0,
+    "estimated_tokens_before": 1141,
+    "estimated_tokens_after": 210,
+    "token_budget": 256,
+    "candidate_limit": 2000,
+    "cache_hit": false
+  },
+  "model": {
+    "provider": "mock",
+    "model": "mock-grounded-v1",
+    "content": "Mock response to: Why does Redis context cache return stale context after session writes?\nRetrieved evidence:\n[memory:1a23bb82-757e-4a98-8385-b18bf653d298]\nRedis context cache keys must include the session revision to prevent stale context.\n[memory:23b102f8-b4f3-4776-81e0-0c045a916525]\nEarlier debugging attempt: clearing Redis temporarily fixed stale context, but the bug returned after writes.\n[tool_response:1aedb10c-04ef-4a2a-a632-0797a60a15f1]\n{\"trace_id\":\"cf6fc5ca-12f1-4f24-a9df-960943a03f89\",\"tool\":\"memory_lookup\",\"success\":true,\"result\":{\"found\":true,\"content\":\"Redis context cache keys must include the session revision to prevent stale context.\"},\"error\":null,\"attempts\":1,\"latency_ms\":4.475474000059876}\n[memory:0cf37813-8af7-4937-bc67-80de47b6da8f]\nPostgres persists events and increments session revision in one transaction.\n[tool_call:fed176ef-27b4-4239-b64b-6fb65c9db361]\n{\"tool\": \"memory_lookup\", \"arguments\": {\"key\": \"cache\"}}\n",
+    "latency_ms": 0.04342399995493906,
+    "estimated_input_tokens": 227,
+    "estimated_output_tokens": 237,
+    "estimated_cost": 0.0,
+    "attempts": [
+      "mock"
+    ]
+  }
+}

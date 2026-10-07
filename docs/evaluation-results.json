@@ -1,0 +1,71 @@
+{
+  "dataset": "synthetic-v1",
+  "cases": 4,
+  "means": {
+    "relevant_context_recall": 1.0,
+    "irrelevant_context_rate": 0.0,
+    "duplicate_context_rate": 0.0,
+    "required_fact_coverage": 1.0,
+    "estimated_token_reduction": 0.4727511169877196,
+    "tool_call_success": 1.0,
+    "deterministic_task_success": 1.0
+  },
+  "results": [
+    {
+      "name": "stale-cache",
+      "relevant_context_recall": 1.0,
+      "irrelevant_context_rate": 0.0,
+      "duplicate_context_rate": 0.0,
+      "required_fact_coverage": 1.0,
+      "estimated_token_reduction": 0.5503875968992248,
+      "tool_call_success": 1,
+      "deterministic_task_success": 1,
+      "context_items": 2,
+      "duplicates_removed": 1,
+      "estimated_tokens_before": 129,
+      "estimated_tokens_after": 58
+    },
+    {
+      "name": "payment-retry",
+      "relevant_context_recall": 1.0,
+      "irrelevant_context_rate": 0.0,
+      "duplicate_context_rate": 0.0,
+      "required_fact_coverage": 1.0,
+      "estimated_token_reduction": 0.4260869565217391,
+      "tool_call_success": 1,
+      "deterministic_task_success": 1,
+      "context_items": 2,
+      "duplicates_removed": 1,
+      "estimated_tokens_before": 115,
+      "estimated_tokens_after": 66
+    },
+    {
+      "name": "tool-timeout",
+      "relevant_context_recall": 1.0,
+      "irrelevant_context_rate": 0.0,
+      "duplicate_context_rate": 0.0,
+      "required_fact_coverage": 1.0,
+      "estimated_token_reduction": 0.4444444444444444,
+      "tool_call_success": 1,
+      "deterministic_task_success": 1,
+      "context_items": 2,
+      "duplicates_removed": 1,
+      "estimated_tokens_before": 108,
+      "estimated_tokens_after": 60
+    },
+    {
+      "name": "durable-events",
+      "relevant_context_recall": 1.0,
+      "irrelevant_context_rate": 0.0,
+      "duplicate_context_rate": 0.0,
+      "required_fact_coverage": 1.0,
+      "estimated_token_reduction": 0.4700854700854701,
+      "tool_call_success": 1,
+      "deterministic_task_success": 1,
+      "context_items": 2,
+      "duplicates_removed": 1,
+      "estimated_tokens_before": 117,
+      "estimated_tokens_after": 62
+    }
+  ]
+}

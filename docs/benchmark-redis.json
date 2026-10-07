@@ -1,0 +1,53 @@
+{
+  "environment": {
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+    "python": "3.12.14",
+    "cpu_count": 9,
+    "service": {
+      "status": "ok",
+      "storage": "sqlite",
+      "cache": "redis"
+    },
+    "transport": "loopback HTTP",
+    "server_workers": 1
+  },
+  "concurrency": 10,
+  "flows": 100,
+  "warmup_flows": 5,
+  "request_count": 1200,
+  "expected_request_count": 1200,
+  "duration_seconds": 4.920636821000016,
+  "throughput_requests_per_second": 243.87087355821663,
+  "p50_ms": 13.06769199993596,
+  "p95_ms": 132.28806799997983,
+  "errors": 0,
+  "error_rate": 0.0,
+  "by_operation": {
+    "session": {
+      "requests": 100,
+      "p50_ms": 9.548884999958318,
+      "p95_ms": 335.302310999964
+    },
+    "memory": {
+      "requests": 800,
+      "p50_ms": 11.268686999983402,
+      "p95_ms": 137.53827999994428
+    },
+    "context_cold": {
+      "requests": 100,
+      "p50_ms": 27.198257999998532,
+      "p95_ms": 44.137096999975256
+    },
+    "context_hot": {
+      "requests": 100,
+      "p50_ms": 12.41345700009333,
+      "p95_ms": 20.43130699996709
+    },
+    "tool": {
+      "requests": 100,
+      "p50_ms": 36.65442500005156,
+      "p95_ms": 152.10572000000866
+    }
+  },
+  "mean_estimated_token_reduction": 0.4017857142857143
+}
