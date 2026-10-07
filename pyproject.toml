@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agent-context-broker"
+version = "0.1.0"
+description = "Context, memory, MCP tools and observability for long-running agents"
+requires-python = ">=3.12"
+dependencies = [
+  "fastapi>=0.115,<1", "uvicorn>=0.30,<1", "pydantic-settings>=2.6,<3",
+  "sqlalchemy[asyncio]>=2.0,<3", "aiosqlite>=0.20,<1", "asyncpg>=0.30,<1",
+  "redis>=5,<8", "httpx[socks]>=0.27,<1", "jsonschema>=4.23,<5",
+  "prometheus-client>=0.21,<1", "mcp>=1.12,<2"
+]
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "pytest-asyncio>=0.24,<2", "pytest-cov>=6,<8", "ruff>=0.12,<1", "mypy>=1.15,<2", "types-jsonschema"]
+[tool.setuptools.packages.find]
+include = ["app*"]
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+[tool.ruff]
+line-length = 100
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "ASYNC"]
+[tool.mypy]
+python_version = "3.12"
+ignore_missing_imports = true
+check_untyped_defs = true
+[tool.setuptools.package-data]
+"app.evaluation" = ["dataset.json"]
